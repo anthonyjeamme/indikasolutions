@@ -1,0 +1,116 @@
+.field {
+    display: inline-block;
+}
+
+.button {
+    padding: 10px 15px;
+    @include font-size-normal();
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    background-color: darken($primary, 10%);
+    color: $light;
+    border-radius: 3px;
+    transition: background-color 300ms;
+
+    &:hover {
+        background-color: darken($primary, 20%);
+    }
+
+    // Colors
+    &.info {
+        background-color: $info;
+        color: white;
+    }
+
+    // Sizes
+    &.small {
+        padding: 8px 15px;
+        @include font-size-small();
+    }
+
+
+    &.google-connection {
+
+        background-color: rgb(203, 63, 34);
+        color: white;
+
+        &:hover {
+            background-color: rgb(165, 52, 28);
+        }
+    }
+
+    &.outline {
+        border: 1px solid $primary;
+        background-color: transparent;
+        color: $primary;
+
+        &:hover {
+            background-color: lighten($primary, 40%);
+            // color: white;
+        }
+
+        &.white {
+            border-color: white;
+            color: white;
+
+            &:hover {
+                background-color: #222;
+            }
+        }
+
+        &.grey {
+            border-color: $grey;
+            color: $grey;
+
+            &:hover {
+                background-color: #eee;
+            }
+        }
+
+        &.info {
+            border-color: $info;
+            color: $info;
+
+            &:hover {
+                background-color: $info;
+                color: white;
+            }
+        }
+    }
+}
+
+.label {
+    padding: 10px 15px;
+    @include font-size-small();
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    text-align: center;
+    background-color: #f5f5f5;
+    color: $grey;
+}
+
+.input {
+
+    padding: 10px 15px;
+    @include font-size-small();
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    outline: none;
+}
+
+.field-line {
+    margin-bottom: 15px;
+    display: flex;
+
+    &>:not(:nth-child(1)) {
+        border-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    &>:not(:nth-last-child(1)) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}

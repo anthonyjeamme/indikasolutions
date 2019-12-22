@@ -1,0 +1,47 @@
+.right-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 80vw;
+    background-color: white;
+    z-index: 1001;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    transform: translateX(110%);
+    transition: transform 600ms;
+
+    &.open {
+        transform: translateX(0);
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    display: none;
+    cursor: pointer;
+
+    &.open {
+        display: block;
+    }
+}
+
+.admin-panel-bottom-bar {}
+
+.client-list {
+    height: 100%;
+}
+
+.client-list-searchbar {
+    padding: 15px 15px 0 15px;
+}

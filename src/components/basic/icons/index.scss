@@ -1,0 +1,106 @@
+@import '../../../style/variables.scss';
+@import '../../../style/animations.scss';
+
+@keyframes icon-entrance {
+
+    0% {
+        stroke-dashoffset: 1000;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.big-icon-wrapper {
+    &:hover {
+
+        .big-icon {
+
+            .background {
+                fill: rgba(0, 0, 0, 0.05);
+            }
+
+            // .stroke {
+            //     stroke: darken($primary, 20%);
+            // }
+
+            // .stroke-0-5 {
+            //     stroke: darken($primary, 20%);
+            // }
+
+            // .fill {
+            //     fill: darken($primary, 20%);
+            // }
+        }
+    }
+}
+
+.big-icon {
+    transition: fill 300ms;
+    user-select: none;
+
+    .stroke-0-5 {
+        stroke-miterlimit: 10;
+        fill: none;
+        stroke: #000;
+        stroke-width: .5px;
+        transition: stroke 300ms;
+    }
+
+    .stroke {
+        fill: none;
+        stroke: #000;
+        stroke-width: .5px;
+        stroke-miterlimit: 10;
+        stroke-linecap: round;
+        transition: stroke 300ms;
+    }
+
+    .fill {
+        fill: #000;
+        transition: fill 300ms;
+    }
+
+    .background {
+        fill: transparent;
+        transition: fill 300ms;
+    }
+
+    &.grey {
+
+        .stroke-0-5,
+        .stroke {
+            stroke: $grey;
+        }
+
+        .fill {
+            fill: $grey;
+        }
+    }
+}
+
+.big-icon-animation-group {
+
+
+    @for $i from 1 through 10 {
+        :nth-child(#{$i}) {
+
+            opacity: 0;
+            animation: fadeInRight 300ms linear #{$i*200}ms normal forwards;
+
+            .big-icon {
+                // animation: name duration timing-function delay iteration-count direction fill-mode;
+                // animation-delay: #{$i*150}ms;
+
+                .stroke,
+                .stroke-0-5 {
+                    stroke-dasharray: 1000;
+                    stroke-dashoffset: 1000;
+                    animation: icon-entrance 5s linear alternate infinite;
+                    animation-delay: #{$i*150}ms;
+                }
+            }
+        }
+    }
+}

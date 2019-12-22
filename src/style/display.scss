@@ -1,0 +1,98 @@
+@import './variables.scss';
+
+.container {
+    width: 1000px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.large-container {
+    width: 1400px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.measure {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.hero {
+    padding: 200px 0;
+    position: relative;
+
+    &.small {
+        padding: 60px 0;
+    }
+
+    &.medium {
+        padding: 120px 0;
+    }
+}
+
+.box {
+    padding: 30px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(black, 0.05);
+    color: $dark;
+    border: 1px solid #e5e5e5;
+    box-sizing: border-box;
+
+    a {
+        color: $dark;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+
+    .pagination-button {
+        padding: 15px;
+        cursor: pointer;
+
+        transition: color 300ms;
+
+        &:hover {
+            color: $primary;
+        }
+
+        &.disabled {
+            color: #ccc;
+
+            &:hover {
+                color: #ccc;
+            }
+        }
+
+    }
+
+    .pagination-current {
+        padding: 15px;
+    }
+}
+
+.alert {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    margin-bottom: 15px;
+    @include font-size-small();
+
+
+    &.danger {
+        border-color: $danger;
+        color: $danger;
+    }
+}

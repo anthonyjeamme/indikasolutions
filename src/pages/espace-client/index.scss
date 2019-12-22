@@ -1,0 +1,77 @@
+@import '../../style/variables.scss';
+
+
+.client-space-section {
+
+    ul {
+        margin: 0;
+
+        li {
+            border: 1px solid transparent;
+            transition: border-color 300ms;
+            padding: 10px;
+            @include font-size-small();
+
+            &:not(:nth-last-child(1)) {
+                margin-bottom: 5px;
+            }
+
+            &:hover {
+
+                border-color: #ddd;
+            }
+
+            .icon {
+                margin-right: 15px;
+            }
+        }
+    }
+
+    h2 {
+        margin-bottom: 15px;
+        color: $grey;
+        @include font-size-normal();
+        font-weight: 200;
+
+        .icon {
+            margin-right: 15px;
+        }
+    }
+
+    .after {
+        text-align: right;
+        @include font-size-small();
+        padding-top: 10px;
+
+        a {
+            color: $grey;
+        }
+    }
+
+    .client-space-icon-item {
+        padding: 15px 5px;
+        margin: 0 5px;
+        border: 1px solid transparent;
+        transition: border-color 300ms;
+        cursor: pointer;
+        width: 120px;
+        text-align: center;
+
+        .icon {
+            color: $grey;
+        }
+
+        header {
+            margin-top: 5px;
+            text-align: center;
+            @include font-size-small();
+        }
+
+        &:hover {
+            border-color: #ddd;
+        }
+    }
+
+    margin-bottom: 30px;
+
+}

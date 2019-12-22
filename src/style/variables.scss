@@ -1,0 +1,40 @@
+$dark: #222;
+$grey: #777;
+$light: #f2f2f2;
+$primary: #23cc43;
+$info: #129ae4;
+$danger: #e74c3c;
+
+$link: #129ae4;
+
+$font-size: 18px;
+$font-size-mobile: 18px;
+
+@mixin font-size-normal {
+    font-size: 16px;
+
+    @media (min-width: $mobile-breakpoint) {
+        font-size: 18px;
+    }
+}
+
+@mixin font-size-small {
+
+    font-size: 12px;
+
+    @media (min-width: $mobile-breakpoint) {
+        font-size: 14px;
+    }
+}
+
+$mobile-breakpoint: 768px;
+
+:export {
+    dark: $dark;
+    light: $light;
+    primary: $primary;
+    info: $info;
+    link: $link;
+    danger: $danger;
+    grey: $grey;
+}

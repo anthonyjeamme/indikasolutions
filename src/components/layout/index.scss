@@ -1,0 +1,212 @@
+@import '../../style/variables.scss';
+@import '../../style/animations.scss';
+
+.layout-header {
+
+    display: flex;
+    align-self: stretch;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 80px;
+    z-index: 99;
+    padding: 0 15px;
+    box-sizing: border-box;
+
+    animation: fadeIn 300ms;
+    animation-iteration-count: 1;
+    // transition: background-color 300ms, color 300ms, height;
+
+    color: $light;
+
+    a {
+
+        color: $light;
+        transition: color 300ms;
+    }
+
+    .logo {
+        margin: 15px 15px 15px 0;
+        height: 40px;
+    }
+
+    .layout-header-brand {
+
+        display: flex;
+        align-items: center;
+        transition: opacity 300ms;
+        user-select: none;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    .layout-header-item {
+
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+
+        padding: 15px;
+        cursor: pointer;
+
+        transition: background-color 300ms;
+
+        &:hover {
+            background-color: rgba(#fff, 0.1);
+        }
+    }
+
+    .layout-header-mobile {
+
+        display: flex;
+        align-self: stretch;
+
+        @media (min-width:$mobile-breakpoint+1px) {
+            display: none;
+        }
+
+        .burger {
+
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+
+            padding: 15px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+
+        .overlay {
+
+            display: none;
+            position: fixed;
+            z-index: 999999;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(black, 0.6);
+
+            &.open {
+                display: block;
+            }
+        }
+
+        nav.side-menu {
+            position: fixed;
+            z-index: 999999;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 350px;
+            max-width: 100%;
+            box-sizing: border-box;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            padding-top: 80px;
+            box-shadow: 0 0 30px rgba(#000, 0.1);
+            transition: transform 300ms;
+            transform: translateX(110%);
+
+            &.open {
+                transform: translateX(0);
+            }
+
+            .close-button {
+                position: fixed;
+                color: $dark;
+                top: 15px;
+                right: 15px;
+                padding: 15px;
+                font-size: 22px;
+                cursor: pointer;
+                transition: opacity 300ms;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+
+
+            .layout-header-item {
+                color: $dark;
+                text-align: center;
+                padding-left: 30px;
+            }
+
+            .side-menu-bottom {
+                background-color: #eee;
+                padding: 15px;
+                text-align: center;
+
+                a {
+                    color: $dark;
+                }
+            }
+        }
+    }
+
+    .left {
+        flex: 1;
+    }
+
+    .left,
+    .right {
+
+        display: flex;
+        align-self: stretch;
+    }
+}
+
+.layout-footer {
+
+    display: flex;
+    padding: 15px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.layout {
+
+    &.light-bg {
+
+        .layout-header {
+            color: $dark;
+
+            a {
+                color: $dark;
+            }
+        }
+    }
+
+    &.client-space {
+        .layout-header {
+            background-color: $dark;
+            color: $light;
+            box-shadow: 0 0 20px rgba(#000, 0.1);
+            height: 50px;
+            font-size: 14px;
+            animation: fadeIn 300ms;
+            animation-iteration-count: 1;
+
+            a {
+                color: $light;
+            }
+
+        }
+
+
+        .layout-header-item:hover {
+            background-color: rgba(white, 0.05);
+        }
+
+        .logo {
+            height: 30px;
+        }
+    }
+}

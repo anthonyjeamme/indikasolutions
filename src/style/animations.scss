@@ -1,0 +1,128 @@
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes browseScreenX {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(3000px);
+    }
+}
+
+@keyframes browseScreenXbis {
+    from {
+        transform: translateX(0) rotate(180deg);
+    }
+
+    to {
+        transform: translateX(3000px);
+    }
+}
+
+@keyframes browseScreenXReverse {
+    from {
+        transform: translateX(3000px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.browse-screen-x {
+    animation: browseScreenX 200s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.browse-screen-x-slow {
+    animation: browseScreenXbis 400s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform: rotate(180deg);
+}
+
+.browse-screen-x-reverse {
+    animation: browseScreenXReverse 200s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes mountainAppear1 {
+    from {
+        transform: scale(1) translateY(80px);
+    }
+
+    to {
+        transform: scale(1) translateY(0);
+    }
+}
+
+
+@keyframes mountainAppear2 {
+    from {
+        transform: scale(1) translateY(50px);
+    }
+
+    to {
+        transform: scale(1) translateY(0);
+    }
+}
+
+
+@keyframes mountainAppear3 {
+    from {
+        transform: scale(1) translateY(30px);
+    }
+
+    to {
+        transform: scale(1) translateY(0);
+    }
+}
+
+.mountain1 {
+    animation: mountainAppear1 3s;
+    animation-iteration-count: 1;
+}
+
+.mountain2 {
+    animation: mountainAppear2 3s;
+    animation-iteration-count: 1;
+}
+
+.mountain3 {
+    animation: mountainAppear3 3s;
+    animation-iteration-count: 1;
+}

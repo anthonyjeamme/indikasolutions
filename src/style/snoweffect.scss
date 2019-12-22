@@ -1,0 +1,33 @@
+@keyframes fall-left {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1
+    }
+
+    100% {
+        transform: translateY(1000px) translateX(-100px);
+        opacity: 0;
+    }
+}
+
+@keyframes fall-right {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1
+    }
+
+    100% {
+        transform: translateY(1000px) translateX(100px);
+        opacity: 0;
+    }
+}
+
+.fall-animation-left {
+    animation: fall-left 5s;
+    animation-iteration-count: 1;
+}
+
+.fall-animation-right {
+    animation: fall-right 5s;
+    animation-iteration-count: 1;
+}

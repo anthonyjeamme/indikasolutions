@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro|Roboto&display=swap');
+
+@import './utils.scss';
+@import './basic.scss';
+@import './variables.scss';
+@import './display.scss';
+
+body {
+    margin: 0;
+    font-family: 'Maven Pro', sans-serif;
+    color: $dark;
+    background-color: $light;
+
+    @include font-size-normal();
+}
+
+a {
+    color: $dark;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+
+h2 {}
+
+small {
+    color: $grey;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin: 30px 0;
+}
+
+table {
+
+    width: 100%;
+    border-spacing: 0 10px;
+    @include font-size-small();
+    text-align: left;
+
+    tr {
+        background-color: white;
+
+        &:nth-child(2n) {
+            background-color: #fafafa;
+        }
+
+        &>:nth-child(1) {
+            border-radius: 5px 0 0 5px;
+        }
+
+        &>:nth-last-child(1) {
+            border-radius: 0 5px 5px 0;
+        }
+
+        td {
+            padding: 15px;
+        }
+
+        th {
+            padding: 15px 15px 5px 15px;
+            font-weight: 400;
+        }
+    }
+
+    tbody {
+        tr {
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 300ms;
+            cursor: pointer;
+
+            &:hover {
+
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            }
+
+            &.empty {
+                box-shadow: none;
+                background-color: #fafafa;
+            }
+        }
+    }
+
+    thead {
+        tr {
+
+            background-color: transparent;
+            color: $grey;
+            text-transform: uppercase;
+        }
+    }
+}

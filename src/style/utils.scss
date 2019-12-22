@@ -1,0 +1,138 @@
+@import './variables.scss';
+
+// Color helpers
+
+.color-dark {
+    color: $dark;
+}
+
+.color-grey {
+    color: $grey;
+}
+
+
+.color-light {
+    color: $light;
+}
+
+.color-primary {
+    color: $primary;
+}
+
+.color-info {
+    color: $info;
+}
+
+.color-danger {
+    color: $danger;
+}
+
+.bg-dark {
+    background-color: $dark;
+    color: $light;
+
+    a {
+        color: $light;
+    }
+}
+
+.bg-light {
+    background-color: $light;
+    color: $dark;
+
+    a {
+        color: $light;
+    }
+}
+
+.bg-primary {
+    background-color: $primary;
+    color: $light;
+
+    a {
+        color: $light;
+    }
+}
+
+.bg-info {
+    background-color: $info;
+    color: $light;
+
+    a {
+        color: $light;
+    }
+}
+
+.bg-danger {
+    background-color: $danger;
+    color: $light;
+
+    a {
+        color: $light;
+    }
+}
+
+// Text
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+// Responsive helpers
+
+.mobile-only {
+    @media (min-width: $mobile-breakpoint + 1px) {
+        display: none;
+    }
+}
+
+.desktop-only {
+    @media (max-width: $mobile-breakpoint) {
+        display: none !important;
+    }
+}
+
+// Misc
+.secured-tag {
+    @include font-size-small();
+    display: flex;
+    margin: auto;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    color: #777;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+
+    .icon {
+        font-size: 28px;
+        margin-right: 10px;
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        text-transform: uppercase;
+
+
+        .line-top {
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .line-bottom {
+            font-size: 10px;
+            opacity: 0.8;
+        }
+    }
+}
