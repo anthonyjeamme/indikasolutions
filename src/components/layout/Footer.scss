@@ -1,0 +1,31 @@
+@import '../../style/variables.scss';
+
+.Footer {
+
+    background-color: $footer-bgcolor;
+    color: white;
+
+    a {
+        color: white;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    padding: 100px 0 50px 0;
+
+    &>.container {
+        display: flex;
+        justify-content: space-between;
+        width: 1200px;
+        margin: 0 auto;
+        max-width: 95vw;
+
+        &>div {
+            display: flex;
+            gap: 30px;
+            font-size: 16px;
+        }
+    }
+}

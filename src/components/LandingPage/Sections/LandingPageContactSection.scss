@@ -1,0 +1,70 @@
+@import '../../../style/variables.scss';
+
+.LandingPageContactSection {
+
+    background-image: linear-gradient(to bottom, transparent 50%, $footer-bgcolor 50%);
+
+    &>.box {
+        width: 1020px;
+        border: 0;
+        background-color: white;
+        margin: 0 auto;
+        padding: 50px 100px;
+
+        &>form {
+            margin-top: 50px;
+
+            &>.form-line {
+                display: flex;
+                gap: 12px;
+                margin-top: 16px;
+
+                &>div {
+                    flex: 1;
+                    position: relative;
+
+                }
+
+                .Textarea.message {
+                    height: 122px;
+                    resize: none;
+                }
+            }
+
+            &>.buttons {
+                margin-top: 30px;
+                text-align: center;
+
+                &>.button {
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
+
+.InputContainer,
+.TextareaContainer {
+
+    position: relative;
+
+    label {
+        position: absolute;
+        bottom: calc(100% - 16px);
+        font-size: 15px;
+        color: rgba($dark, 0.7);
+    }
+
+    .Input,
+    .Textarea {
+        margin-top: 22px;
+        border: 1px solid rgba($dark, 0.1);
+        border-radius: 4px;
+        padding: 6px;
+        font-family: inherit;
+        width: 100%;
+        box-sizing: border-box;
+        outline: none;
+        font-size: 16px;
+    }
+}

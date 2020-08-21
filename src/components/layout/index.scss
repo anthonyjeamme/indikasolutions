@@ -169,6 +169,13 @@
     padding: 15px;
     text-align: center;
     line-height: 1.5;
+    background-color: $footer-bgcolor;
+    color: white;
+
+    a {
+
+        color: white;
+    }
 }
 
 .layout {

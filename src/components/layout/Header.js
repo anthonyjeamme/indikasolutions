@@ -102,7 +102,7 @@ const ClientSpaceItems = () => {
 		<>
 			<div className="left" style={FLEX(1)}>
 				<Link to="/" className="layout-header-brand">
-					<LogoMini color="light" /> Mon espace
+					<Logo color="dark" />
 				</Link>
 			</div>
 			{session.user && (

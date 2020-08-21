@@ -1,0 +1,116 @@
+@import '../../style/variables.scss';
+
+.connection-screen {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+    font-size: 16px;
+    background-color: $light;
+
+    &>.left-panel {
+        max-width: 800px;
+        width: 40%;
+        background-color: $primary;
+        height: 100%;
+        background-image: url('/images/illustrations/mountain.jpg');
+        background-size: cover;
+    }
+
+    &>.signin-form {
+        margin: auto auto auto auto;
+        width: 450px;
+        max-width: 100%;
+        padding: 0 47px;
+
+        h2 {
+            font-size: 40px;
+            margin: 0 0 20px 0;
+            line-height: 1;
+            max-width: 350px;
+        }
+
+        p.subtitle {
+            margin: 10px 0;
+            opacity: 0.5;
+            font-size: 16px;
+        }
+
+        .field-line {
+            margin-top: 20px;
+        }
+
+        .input {
+            background-color: transparent;
+            border: 0;
+            border-bottom: 2px solid rgba($dark, 0.1);
+            padding-left: 0;
+            border-radius: 0;
+            font-size: 16px;
+            font-family: inherit;
+
+            &::placeholder {
+                opacity: 0.5;
+                color: $dark;
+            }
+        }
+
+        .button {
+            padding: 10px 0;
+            font-size: 16px;
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .icon {
+                margin-left: 10px;
+            }
+        }
+
+
+        .not-client {
+            margin-top: 40px;
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        .forget-password {
+            text-align: right;
+            text-decoration: underline;
+            opacity: 0.5;
+        }
+    }
+
+    // Mobile
+    @media (max-width:$mobile-breakpoint) {
+
+        align-items: flex-start;
+
+
+        &>.left-panel {
+            display: none;
+        }
+
+        &>.signin-form {
+            margin-top: 40px;
+            width: 100%;
+
+            h2 {
+                font-size: 20px;
+                margin: 0;
+            }
+
+            p.subtitle {
+                margin: 10px 0;
+                font-size: 16px;
+            }
+
+        }
+    }
+}

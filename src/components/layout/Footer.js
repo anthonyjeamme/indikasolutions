@@ -5,9 +5,34 @@ import { formatPhoneNumber } from '../../utils/utils'
 import Information from '../basic/Information'
 import { FLEX_COLUMN, FLEX } from '../../style/structure'
 
+import './Footer.scss'
+
 const Footer = ({}) => {
 	return (
-		<footer className="layout-footer bg-dark">
+		<footer className="Footer">
+			<div className="container">
+				<div>
+					<Link to="/mentions" className="item">
+						Mentions Légales
+					</Link>
+					<Link to="/cgu" className="item">
+						CGU
+					</Link>
+				</div>
+
+				<div>
+					<div className="item">
+						Indika Assurance & Patrimoine © - Tous droits réservés
+					</div>
+				</div>
+			</div>
+		</footer>
+	)
+}
+export default Footer
+
+/*
+	<footer className="layout-footer Footer">
 			<div className="container">
 				<div style={FLEX_COLUMN}>
 					<div style={FLEX(1)}>
@@ -47,6 +72,5 @@ const Footer = ({}) => {
 				</div>
 			</div>
 		</footer>
-	)
-}
-export default Footer
+
+*/

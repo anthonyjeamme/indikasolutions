@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useSession } from '../context/Session'
-import { Label } from '../basic/Label'
 import { Input } from '../basic/Input'
 import { FLEX } from '../../style/structure'
 import { Button } from '../basic/Button'
-import { navigate } from 'gatsby'
 import { useLayout } from '../layout'
 import { useInput } from '../../utils/utils'
 
 import '../../style/display.scss'
+import './ConnectionScreen.scss'
+import { ArrowIcon } from '../basic/icons/Icons'
 
 export const ConnectionPortal = ({ children, admin = false }) => {
 	const session = useSession()
@@ -44,35 +44,30 @@ export const ConnectionScreen = ({ session }) => {
 	}
 
 	return (
-		<div
-			style={{
-				height: '100vh',
-				display: 'flex',
-				flexDirection: 'column',
-				alignItems: 'center'
-			}}
-		>
-			<div
-				style={{
-					width: 400,
-					maxWidth: '95%',
-					margin: 'auto',
-					paddingTop: 40
-				}}
-			>
-				<h2 className="text-center">Connexion à mon espace</h2>
+		<div className="connection-screen">
+			<div className="left-panel"></div>
+			<div className="signin-form">
+				<h2>Bienvenue sur votre espace !</h2>
+				<p className="subtitle">
+					Retrouvez tous vos documents en quelques clics.
+				</p>
 				<div className="field-line">
-					<Label style={{ width: 20 }}>
-						<i className="far fa-user" />
-					</Label>
-					<Input style={FLEX(1)} {...emailInput.field} />
+					<Input
+						style={FLEX(1)}
+						{...emailInput.field}
+						placeHolder="Adresse mail"
+					/>
 				</div>
 				<div className="field-line">
-					<Label style={{ width: 20 }}>
-						<i className="fas fa-key" />
-					</Label>
-					<Input type="password" style={FLEX(1)} {...passwordInput.field} />
+					<Input
+						type="password"
+						style={FLEX(1)}
+						{...passwordInput.field}
+						placeHolder="Mot de passe"
+					/>
 				</div>
+
+				<div className="forget-password">Mot de passe oublié</div>
 
 				{formError && (
 					<div className="alert danger text-center">{formError}</div>
@@ -84,23 +79,12 @@ export const ConnectionScreen = ({ session }) => {
 					style={{ width: '100%' }}
 				>
 					Se connecter
+					<ArrowIcon />
 				</Button>
 
-				<hr />
+				<div className="not-client">Je n'ai pas de compte</div>
 
-				<div className="text-center">
-					<Button
-						className="google-connection"
-						onClick={() => {
-							session.signIn_GOOGLE().then(() => {
-								navigate('/espace-client')
-							})
-						}}
-					>
-						<i className="fab fa-google" /> Connexion Google
-					</Button>
-				</div>
-
+				{/* 
 				<hr />
 
 				<div
@@ -119,7 +103,7 @@ export const ConnectionScreen = ({ session }) => {
 							<span className="line-bottom">chiffrement SSL</span>
 						</div>
 					</span>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	)

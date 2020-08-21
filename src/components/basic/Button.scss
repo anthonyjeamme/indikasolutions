@@ -1,0 +1,10 @@
+@import '../../style/variables.scss';
+
+.Button {
+
+    font-size: 15px;
+
+    &.theme-blue {
+        background-color: $info;
+    }
+}

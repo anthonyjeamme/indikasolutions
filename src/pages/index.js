@@ -5,12 +5,13 @@ import { Button } from '../components/basic/Button'
 import { useSession } from '../components/context/Session'
 import { MicroCopy } from '../components/basic/MicroCopy'
 
-import BackgroundImage from 'gatsby-background-image'
 import { graphql } from 'gatsby'
 import { useLayout } from '../components/layout'
 
-import '../style/snoweffect.scss'
 import { FLEX, FLEX_COLUMN } from '../style/structure'
+
+import '../style/snoweffect.scss'
+import LandingPage from '../components/LandingPage/LandingPage'
 
 // import * as firebase from 'firebase'
 
@@ -173,7 +174,9 @@ const IndexPage = ({ data }) => {
 	// 	firebase.auth().signOut()
 	// }
 
-	useEffect(useLayout().useMainTheme, [])
+	return <LandingPage />
+
+	// useEffect(useLayout().useMainTheme, [])
 
 	return (
 		<div>
